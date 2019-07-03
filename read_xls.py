@@ -1,3 +1,4 @@
+#Using pythong version 2.7
 import xlrd
 import json
 import sys
@@ -26,15 +27,13 @@ def generate_data(text, value, child, unit_type):
     #print(data)
     return data
 
-
-
 province_list = [generate_data(table.cell(0,2).value, table.cell(0,1).value, 0, 'p')]
 city_list = [generate_data(table.cell(0,4).value, table.cell(0,3).value, 1, 'c')]
 district_list = [generate_data(table.cell(0,6).value, table.cell(0,5).value, 1, 'd')]
 town_list = [generate_data(table.cell(0,8).value, table.cell(0,7).value, 1, 't')]
 
 i = 1
-while i < 1000:
+while i < rows:
     #build province list
     data = generate_data(table.cell(i,2).value, table.cell(i,1).value, 0, 'p')
     try:       
@@ -71,6 +70,7 @@ def sortByValue(element):
 province_list.sort(key=sortByValue)
 city_list.sort(key=sortByValue)
 district_list.sort(key=sortByValue)
+town_list.sort(key=sortByValue)
 
 cityColumns = [
     {
@@ -88,12 +88,9 @@ cityColumns = [
 
 line1 = 'export class ChineseCities {\n'
 line2 = '\tstatic cities = \n'
-line3 = '\t\t'
 last_line = '\n}'
 
-f = open('chinese-cities.ts', 'wb')
-f.write(line1 + line2)
-f.write(line3)
-f.write(json.dumps(cityColumns).decode('unicode_escape'))
-f.write(last_line)
-f.close()
+with open('chinese-cities.ts', 'wb') as f:
+    f.write(line1 + line2)
+    f.write(json.dumps(cityColumns, sort_keys=False, indent=4, separators=(',', ':')).decode('unicode_escape'))
+    f.write(last_line)
