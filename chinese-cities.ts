@@ -151,11 +151,6 @@ export class ChineseCities {
             {
                 "text":"天津市",
                 "parentVal":120000,
-                "value":120000
-            },
-            {
-                "text":"天津市",
-                "parentVal":120000,
                 "value":120100
             },
             {
@@ -2245,11 +2240,6 @@ export class ChineseCities {
             {
                 "text":"滨海新区",
                 "parentVal":120100,
-                "value":120116
-            },
-            {
-                "text":"滨海新区",
-                "parentVal":120000,
                 "value":120116
             },
             {
