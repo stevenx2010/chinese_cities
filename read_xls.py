@@ -45,21 +45,21 @@ while i < rows:
         province_list.append(data)
 
     #build city list
-    data = generate_data(table.cell(i,4).value, table.cell(i,3).value, 1, table.cell(0,1).value)
+    data = generate_data(table.cell(i,4).value, table.cell(i,3).value, 1, table.cell(i,1).value)
     try:
         city_list.index(data)
     except ValueError:
         city_list.append(data)
 
     #build district list
-    data = generate_data(table.cell(i,6).value, table.cell(i,5).value, 1, table.cell(0,3).value)
+    data = generate_data(table.cell(i,6).value, table.cell(i,5).value, 1, table.cell(i,3).value)
     try:
         district_list.index(data)
     except ValueError:
         district_list.append(data)
 
     #build town list
-    data = generate_data(table.cell(i,8).value, table.cell(i,7).value, 1, table.cell(0,5).value)
+    data = generate_data(table.cell(i,8).value, table.cell(i,7).value, 1, table.cell(i,5).value)
     try:
         town_list.index(data)
     except ValueError:
