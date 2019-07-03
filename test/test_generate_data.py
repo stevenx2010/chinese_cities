@@ -43,14 +43,20 @@ class TestGenerateData:
             #print(row_town)
 
             province_list = [read_xls.generate_data(sheet.cell(i,2).value, sheet.cell(i,1).value, 0, 'p')]
-            city_list = [read_xls.generate_data(sheet.cell(i,4).value, sheet.cell(i,3).value, 1, 'c')]
-            district_list = [read_xls.generate_data(sheet.cell(i,6).value, sheet.cell(i,5).value, 1, 'd')]
-            town_list = [read_xls.generate_data(sheet.cell(i,8).value, sheet.cell(i,7).value, 1, 't')]
+            city_list = [read_xls.generate_data(sheet.cell(i,4).value, sheet.cell(i,3).value, 1, sheet.cell(i,1).value)]
+            district_list = [read_xls.generate_data(sheet.cell(i,6).value, sheet.cell(i,5).value, 1, sheet.cell(i,3).value)]
+            town_list = [read_xls.generate_data(sheet.cell(i,8).value, sheet.cell(i,7).value, 1, sheet.cell(i,5).value)]
 
             #print(province_list)
             #print(province_list[0]['value'])
+            #print(town_list[0])
             assert row_town[1] == province_list[0]['value']
             assert row_town[3] == city_list[0]['value']
             assert row_town[5] == district_list[0]['value']
             assert row_town[7] == town_list[0]['value']
+
+            #test parentVal
+            assert row_town[5] == town_list[0]['parentVal']
+            assert row_town[3] == district_list[0]['parentVal']
+            assert row_town[1] == city_list[0]['parentVal']
             

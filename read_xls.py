@@ -11,16 +11,19 @@ table = workbook.sheets()[0]
 rows = table.nrows
 print(rows)
 
-def generate_data(text, value, child, unit_type):
-    if child == 0:
+def generate_data(text, value, is_child, parent):
+    if is_child == 0:
         data = {'text': text, 'value': int(value)}
     else:
+        parent = int(parent)
+        '''
         if unit_type == 'c':    #city
             parent = int(value) / 10000 * 10000
         if unit_type == 'd':    #district
             parent = int(value) /100 * 100
         if unit_type == 't':    #town
             parent = int(value) / 1000
+        '''
 
         data = {'text': text, 'value': int(value), 'parentVal': parent}
 
@@ -28,9 +31,9 @@ def generate_data(text, value, child, unit_type):
     return data
 
 province_list = [generate_data(table.cell(0,2).value, table.cell(0,1).value, 0, 'p')]
-city_list = [generate_data(table.cell(0,4).value, table.cell(0,3).value, 1, 'c')]
-district_list = [generate_data(table.cell(0,6).value, table.cell(0,5).value, 1, 'd')]
-town_list = [generate_data(table.cell(0,8).value, table.cell(0,7).value, 1, 't')]
+city_list = [generate_data(table.cell(0,4).value, table.cell(0,3).value, 1, table.cell(0,1).value)]
+district_list = [generate_data(table.cell(0,6).value, table.cell(0,5).value, 1, table.cell(0,3).value)]
+town_list = [generate_data(table.cell(0,8).value, table.cell(0,7).value, 1, table.cell(0,5).value)]
 
 i = 1
 while i < rows:
@@ -42,21 +45,21 @@ while i < rows:
         province_list.append(data)
 
     #build city list
-    data = generate_data(table.cell(i,4).value, table.cell(i,3).value, 1, 'c')
+    data = generate_data(table.cell(i,4).value, table.cell(i,3).value, 1, table.cell(0,1).value)
     try:
         city_list.index(data)
     except ValueError:
         city_list.append(data)
 
     #build district list
-    data = generate_data(table.cell(i,6).value, table.cell(i,5).value, 1, 'd')
+    data = generate_data(table.cell(i,6).value, table.cell(i,5).value, 1, table.cell(0,3).value)
     try:
         district_list.index(data)
     except ValueError:
         district_list.append(data)
 
     #build town list
-    data = generate_data(table.cell(i,8).value, table.cell(i,7).value, 1, 't')
+    data = generate_data(table.cell(i,8).value, table.cell(i,7).value, 1, table.cell(0,5).value)
     try:
         town_list.index(data)
     except ValueError:
