@@ -15,7 +15,6 @@ def generate_data(text, value, is_child, parent):
     if is_child == 0:
         data = {'text': text, 'value': int(value)}
     else:
-        parent = int(parent)
         '''
         if unit_type == 'c':    #city
             parent = int(value) / 10000 * 10000
@@ -25,7 +24,7 @@ def generate_data(text, value, is_child, parent):
             parent = int(value) / 1000
         '''
 
-        data = {'text': text, 'value': int(value), 'parentVal': parent}
+        data = {'text': text, 'value': int(value), 'parentVal': int(parent)}
 
     #print(data)
     return data
