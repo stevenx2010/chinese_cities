@@ -1409,11 +1409,6 @@ export class ChineseCities {
                 "value":500100
             },
             {
-                "text":"重庆市",
-                "parentVal":500000,
-                "value":500200
-            },
-            {
                 "text":"成都市",
                 "parentVal":510000,
                 "value":510100
@@ -12149,62 +12144,62 @@ export class ChineseCities {
             },
             {
                 "text":"城口县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500229
             },
             {
                 "text":"丰都县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500230
             },
             {
                 "text":"垫江县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500231
             },
             {
                 "text":"忠县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500233
             },
             {
                 "text":"云阳县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500235
             },
             {
                 "text":"奉节县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500236
             },
             {
                 "text":"巫山县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500237
             },
             {
                 "text":"巫溪县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500238
             },
             {
                 "text":"石柱土家族自治县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500240
             },
             {
                 "text":"秀山土家族苗族自治县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500241
             },
             {
                 "text":"酉阳土家族苗族自治县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500242
             },
             {
                 "text":"彭水苗族土家族自治县",
-                "parentVal":500200,
+                "parentVal":500100,
                 "value":500243
             },
             {
