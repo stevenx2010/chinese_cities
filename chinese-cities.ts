@@ -506,11 +506,6 @@ export class ChineseCities {
             {
                 "text":"上海市",
                 "parentVal":310000,
-                "value":310000
-            },
-            {
-                "text":"上海市",
-                "parentVal":310000,
                 "value":310100
             },
             {
@@ -5688,11 +5683,6 @@ export class ChineseCities {
                 "value":310113
             },
             {
-                "text":"宝山区",
-                "parentVal":310000,
-                "value":310113
-            },
-            {
                 "text":"嘉定区",
                 "parentVal":310100,
                 "value":310114
@@ -5703,18 +5693,8 @@ export class ChineseCities {
                 "value":310115
             },
             {
-                "text":"浦东新区",
-                "parentVal":310000,
-                "value":310115
-            },
-            {
                 "text":"金山区",
                 "parentVal":310100,
-                "value":310116
-            },
-            {
-                "text":"金山区",
-                "parentVal":310000,
                 "value":310116
             },
             {
@@ -5733,18 +5713,8 @@ export class ChineseCities {
                 "value":310120
             },
             {
-                "text":"奉贤区",
-                "parentVal":310000,
-                "value":310120
-            },
-            {
                 "text":"崇明区",
                 "parentVal":310100,
-                "value":310151
-            },
-            {
-                "text":"崇明区",
-                "parentVal":310000,
                 "value":310151
             },
             {
